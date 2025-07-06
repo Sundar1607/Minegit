@@ -8,14 +8,14 @@ function App() {
   const [bmi, setBmi] = useState(null);
 
   const calculateBMI = async () => {
-    const res = await fetch('http://localhost:5000/api/bmi', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ weight: parseFloat(weight), height: parseFloat(height) })
-    });
-    const data = await res.json();
-    setBmi(data.bmi);
-  };
+  const res = await fetch('http://65.2.132.111:5000/api/bmi', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify({ weight: parseFloat(weight), height: parseFloat(height) })
+  });
+  const data = await res.json();
+  setBmi(data.bmi);
+};
 
   return (
     <div className="App">
